@@ -1,10 +1,9 @@
 import os
 from pathlib import Path
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-gilwjkfp03g&0z(424z_cdm-qu(-z%yuvmrj6s&-aoci!*e0wj'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = True
 
@@ -20,12 +19,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
     'django_filters',
-    
+
     'model',
     'api',
     'user',
