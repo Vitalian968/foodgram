@@ -3,7 +3,7 @@ from django.core import exceptions as django_exceptions
 from djoser.serializers import UserCreateSerializer, UserSerializer
 from drf_base64.fields import Base64ImageField
 from model.models import (Favorite, Ingredient, Recipe, Recipe_ingredient,
-                            Shopping_cart, Tag)
+                          Shopping_cart, Tag)
 from rest_framework import serializers
 from user.models import Subscribe, User
 from django.db import transaction
@@ -25,7 +25,7 @@ class UserReadSerializer(UserSerializer):
 
     def get_is_subscribed(self, obj):
         if (self.context.get('request')
-           and not self.context['request'].user.is_anonymous):
+            and not self.context['request'].user.is_anonymous):
             return Subscribe.objects.filter(user=self.context['request'].user,
                                             author=obj).exists()
         return False
