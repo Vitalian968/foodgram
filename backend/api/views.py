@@ -6,10 +6,7 @@ from rest_framework import filters, mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
-from backend.settings import FILE_NAME
-from model.models import (Favorite, Ingredient, Recipe, Recipe_ingredient,
-                          Shopping_cart, Tag)
-from user.models import Subscribe, User
+
 from .filters import RecipeFilter
 from .pagination import CustomPaginator
 from .permissions import IsAuthorOrReadOnly
@@ -18,6 +15,11 @@ from .serializers import (IngredientSerializer, RecipeCreateSerializer,
                           SetPasswordSerializer, SubscribeAuthorSerializer,
                           SubscriptionsSerializer, TagSerializer,
                           UserCreateSerializer, UserReadSerializer)
+
+from backend.settings import FILE_NAME
+from model.models import (Favorite, Ingredient, Recipe, Recipe_ingredient,
+                          Shopping_cart, Tag)
+from user.models import Subscribe, User
 
 # -----------------------------------------------------------------------------
 #                            Приложение users
