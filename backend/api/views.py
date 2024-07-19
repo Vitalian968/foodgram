@@ -2,9 +2,6 @@ from django.db.models import Sum
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-from backend.settings import FILE_NAME
-from model.models import (Favorite, Ingredient, Recipe, Recipe_ingredient,
-                            Shopping_cart, Tag)
 from rest_framework import filters, mixins, status, viewsets
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny, IsAuthenticated
@@ -19,6 +16,9 @@ from .serializers import (IngredientSerializer, RecipeCreateSerializer,
                           SetPasswordSerializer, SubscribeAuthorSerializer,
                           SubscriptionsSerializer, TagSerializer,
                           UserCreateSerializer, UserReadSerializer)
+from backend.settings import FILE_NAME
+from model.models import (Favorite, Ingredient, Recipe, Recipe_ingredient,
+                          Shopping_cart, Tag)
 
 # -----------------------------------------------------------------------------
 #                            Приложение users
