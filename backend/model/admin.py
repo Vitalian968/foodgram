@@ -20,10 +20,7 @@ class TagAdmin(admin.ModelAdmin):
 @admin.register(models.Recipe)
 class RecipeAdmin(admin.ModelAdmin):
     list_display = ('pk', 'name', 'author', 'in_favorites')
-    list_editable = (
-        'name', 'cooking_time', 'text', 'tags',
-        'image', 'author'
-    )
+    list_editable = ('name', 'author')
     readonly_fields = ('in_favorites',)
     list_filter = ('name', 'author', 'tags')
     empty_value_display = '-empty-'
