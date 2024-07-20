@@ -31,7 +31,7 @@ services:
       - ./frontend/:/app/result_build/
       
   nginx:
-    build: ./nginx/
+    build: ./infra/
     env_file: .env
     ports:
       - "8000:80"

@@ -10,13 +10,11 @@ services:
     image: postgres:13.0-alpine
     volumes:
       - pg_data:/var/lib/postgresql/data/
-    restart: on-failure
     env_file:
       - .env
   
   backend:
-      build:
-        image: vitalian968/foodgram_backend:latest
+      image: vitalian968/foodgram_backend:latest
       restart: always
       volumes:
         - static:/app/static/
@@ -27,15 +25,14 @@ services:
         - .env
 
   frontend:
-    image: vitalian968/foodgram_frontend:latest
     env_file: .env
-    depends_on:
-      - backend 
+    image: vitalian968/foodgram_frontend:latest
     volumes:
       - ./frontend/:/app/result_build/
       
   nginx:
     image: vitalian968/foodgram_gateway:latest
+    env_file: .env
     ports:
       - "8000:80"
     volumes:
@@ -47,3 +44,4 @@ services:
     depends_on:
       - frontend
     restart: always
+
