@@ -7,7 +7,7 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['158.160.90.21', '127.0.0.1', 'localhost', 'saitvitalian.ru']
+ALLOWED_HOSTS = ['158.160.90.21', '127.0.0.1', 'localhost', 'vitaliansait.ddns.net']
 
 
 # Application definition
