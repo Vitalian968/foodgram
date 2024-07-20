@@ -32,7 +32,7 @@ services:
     depends_on:
         - backend
     volumes:
-      - ./frontend/:/app/result_build/
+      - static:/static
       
   nginx:
     image: vitalian968/foodgram_gateway:latest
