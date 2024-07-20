@@ -27,6 +27,9 @@ services:
   frontend:
     env_file: .env
     image: vitalian968/foodgram_frontend:latest
+    command: cp -r /app/build/. /static/
+    depends_on:
+        - backend
     volumes:
       - ./frontend/:/app/result_build/
       
