@@ -11,7 +11,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
 DEBUG = os.getenv('DEBUG', '').lower() in ('true', 'on', '1')
 
 ALLOWED_HOSTS = (
-    os.getenv('ALLOWED_HOSTS', 'localhost, 127.0.0.1')
+    os.getenv('ALLOWED_HOSTS', 'localhost, 127.0.0.1, vitaliansait.ddns.net')
     .replace(' ', '')
     .split(',')
 )
