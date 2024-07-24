@@ -8,7 +8,7 @@ SECRET_KEY = '!rz0hf(w)z##6%bsr4to3w3x!dh1c9wx+^0!vktc!0$jqau-f1'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['158.160.90.21', '127.0.0.1', 'localhost', 'vitaliansait.ddns.net']
+ALLOWED_HOSTS = ['158.160.90.21', '127.0.0.1', 'localhost', 'saitvitalian.ru']
 
 
 INSTALLED_APPS = [
