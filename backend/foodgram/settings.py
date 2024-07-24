@@ -1,24 +1,14 @@
 import os
 from pathlib import Path
 
-from django.core.management.utils import get_random_secret_key
-
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
+SECRET_KEY = '!rz0hf(w)z##6%bsr4to3w3x!dh1c9wx+^0!vktc!0$jqau-f1'
 
-DEBUG = os.getenv('DEBUG', '').lower() in ('true', 'on', '1')
+DEBUG = True
 
-ALLOWED_HOSTS = (
-    os.getenv('ALLOWED_HOSTS', 'localhost, 127.0.0.1')
-    .replace(' ', '')
-    .split(',')
-)
-if 'CSRF_TRUSTED_ORIGINS' in os.environ:
-    CSRF_TRUSTED_ORIGINS = (
-        os.getenv('CSRF_TRUSTED_ORIGINS').replace(' ', '').split(',')
-    )
+ALLOWED_HOSTS = ['158.160.90.21', '127.0.0.1', 'localhost', 'vitaliansait.ddns.net']
 
 
 INSTALLED_APPS = [
@@ -29,8 +19,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # second apps
-    'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework',
     'djoser',
     'django_filters',
     # project apps
@@ -45,6 +35,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
