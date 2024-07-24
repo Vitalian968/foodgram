@@ -10,11 +10,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
 
 DEBUG = os.getenv('DEBUG', '').lower() in ('true', 'on', '1')
 
-ALLOWED_HOSTS = (
-    os.getenv('ALLOWED_HOSTS', 'localhost, 127.0.0.1, vitaliansait.ddns.net')
-    .replace(' ', '')
-    .split(',')
-)
+ALLOWED_HOSTS = ['158.160.90.21', '127.0.0.1', 'localhost', 'vitaliansait.ddns.net']
 if 'CSRF_TRUSTED_ORIGINS' in os.environ:
     CSRF_TRUSTED_ORIGINS = (
         os.getenv('CSRF_TRUSTED_ORIGINS').replace(' ', '').split(',')
