@@ -20,7 +20,7 @@ services:
 
   backend:
     container_name: foodgram-back
-    build: ../backend
+    image: vitalian968/foodgram_backend
     volumes:
       - staticfiles:/app/staticfiles/
       - mediafiles:/app/media/
@@ -31,14 +31,14 @@ services:
 
   frontend:
     container_name: foodgram-front
-    build: ../frontend
+    image: vitalian968/foodgram_frontend
     command: cp -r /app/build/. /frontend_static/
     volumes:
       - staticfiles:/frontend_static
 
   nginx:
     container_name: foodgram-proxy
-    build: .
+    image: vitalian968/foodgram_nginx
     ports:
       - "8000:80"
     volumes:
