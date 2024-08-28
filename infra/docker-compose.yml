@@ -12,11 +12,6 @@ services:
     env_file: .env
     volumes:
       - pg_data:/var/lib/postgresql/data
-    healthcheck:
-      test: [ "CMD-SHELL", "pg_isready -h $DB_HOST -U $POSTGRES_USER -d $POSTGRES_DB" ]
-      interval: 5s
-      timeout: 5s
-      retries: 5
 
   backend:
     container_name: foodgram-back
